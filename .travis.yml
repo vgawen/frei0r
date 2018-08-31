@@ -1,9 +1,27 @@
-sudo: required
-
+notifications:
+  email: false
+env:
+  - RELEASE_BRANCH="master"
 language: c
-
+os:
+- linux
+- osx
+sudo: required
 services:
   - docker
+compiler:
+- gcc
+- clang
+addons:
+  apt:
+    packages:
+    - build-essential
+    - gcc
+    - make
+    - cmake
+    - clang
+    - mingw-w64
+    - swig
 
 before_install:
 - docker pull dyne/devuan:beowulf
@@ -11,4 +29,3 @@ before_install:
 
 script:
 - cmake . && make
-

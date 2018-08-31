@@ -9,19 +9,6 @@ os:
 sudo: required
 services:
   - docker
-compiler:
-- gcc
-- clang
-addons:
-  apt:
-    packages:
-    - build-essential
-    - gcc
-    - make
-    - cmake
-    - clang
-    - mingw-w64
-    - swig
 
 before_install:
 - docker pull dyne/devuan:beowulf
